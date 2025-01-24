@@ -1,0 +1,135 @@
+body {
+  display: flex;
+  padding: 0 10px;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  background-color: #181818; /* Fundo escuro */
+  color: #fff; /* Texto claro */
+}
+
+.wrapper {
+  height: 265px;
+  max-width: 410px;
+  background: #222; /* Fundo do container */
+  border-radius: 7px;
+  padding: 20px 25px 0;
+  transition: height 0.25s ease;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+.wrapper.active {
+  height: 530px;
+}
+
+header h1 {
+  font-size: 21px;
+  font-weight: 500;
+  color: #fff; /* Título claro */
+}
+
+header p {
+  margin-top: 5px;
+  color: #aaa; /* Texto de descrição mais suave */
+  font-size: 16px;
+}
+
+.wrapper .form {
+  margin: 20px 0 25px;
+}
+
+.form input {
+  width: 90%;
+  height: 55px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  transition: 0.1s ease;
+}
+
+.form button {
+  width: 100%;
+  height: 55px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  transition: 0.1s ease;
+}
+
+.form input {
+  font-size: 18px;
+  padding: 0 17px;
+  border: 1px solid #555; /* Borda mais suave */
+  color: #fff;
+  background: #333; /* Fundo do input mais escuro */
+}
+
+.form input:focus {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.13);
+}
+
+.form input::placeholder {
+  color: #999; /* Placeholder em tom mais claro */
+}
+
+.form button {
+  color: #fff;
+  cursor: pointer;
+  margin-top: 20px;
+  font-size: 17px;
+  background: #444; /* Fundo do botão escuro */
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.form button:hover {
+  background: #333; /* Fundo do botão ao passar o mouse */
+}
+
+.form button:active {
+  transform: scale(0.95);
+}
+
+.qr-code {
+  opacity: 0;
+  display: flex;
+  padding: 33px 0;
+  border-radius: 5px;
+  align-items: center;
+  pointer-events: none;
+  justify-content: center;
+  border: 1px solid #ccc; /* Borda mais suave */
+}
+
+.wrapper.active .qr-code {
+  opacity: 1;
+  pointer-events: auto;
+  transition: opacity 0.5s 0.05s ease;
+}
+
+.qr-code img {
+  width: 170px;
+}
+
+@media (max-width: 430px) {
+  .wrapper {
+    height: 255px;
+    padding: 16px 20px;
+  }
+
+  .wrapper.active {
+    height: 510px;
+  }
+
+  header p {
+    color: #696969; /* Cor mais suave para o texto */
+  }
+
+  .form input,
+  .form button {
+    height: 52px;
+  }
+
+  .qr-code img {
+    width: 160px;
+  }
+}
